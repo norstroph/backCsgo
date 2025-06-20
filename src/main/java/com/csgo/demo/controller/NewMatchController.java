@@ -2,6 +2,7 @@ package com.csgo.demo.controller;
 
 import com.csgo.demo.model.MatchData;
 import com.csgo.demo.model.Team;
+import com.csgo.demo.model.WinnerResponse;
 import com.csgo.demo.service.ApiPandaScoreService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ public class NewMatchController {
     }
 
     @GetMapping("/matches/past")
-    public List<MatchData> getMatches() throws JsonProcessingException {
+    public List<WinnerResponse> getMatches() throws JsonProcessingException {
         return pandaScoreService.getMatches();
     }
 }
